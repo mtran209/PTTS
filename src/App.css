@@ -1,18 +1,29 @@
 body, html {
-  background-color: white;
-  height: 100vh;
+  background-color: #D1CFB5 !important;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
-.logoimage {
-  height: 22vmin;
-}
 
 .header {
-  background-color: white;
-  height: 12vmin;
+  height: 20vh;
   padding: 0;
   margin: 0;
 }
 
+.card, img {
+  border-radius: 10px !important;
+}
+
+.site-footer {
+  flex-shrink: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}

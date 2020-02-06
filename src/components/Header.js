@@ -1,101 +1,125 @@
-import React, { Component } from 'react';
-import { Navbar, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink, NavbarBrand, Button } from 'reactstrap';
+import React, { useState } from 'react';
+import { Navbar, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink, NavbarBrand, Button, NavbarToggler, Collapse } from 'reactstrap';
 import { baseUrl } from './baseUrl'
 
-class Header extends Component {
-    render() {
-        return (
-            <div className="container-fluid p-0">
-                <Navbar className="header d-flex justify-content-between" color="light" light expand="md">
-                <NavbarBrand className="ml-2" href="#"><img src={baseUrl + 'images/pttslogo.png'} className="logoimage"/></NavbarBrand>
-                    <Nav navbar>
-                    <UncontrolledDropdown className="px-2" nav inNavbar>
-                        <DropdownToggle nav caret>
-                            Tutoring
+function Header() {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => setIsOpen(!isOpen);
+    
+    return (
+        <div className="container-fluid p-0">
+            <Navbar className="d-flex" dark expand="md" sticky="top" style={{backgroundColor: '#36542D'}}>
+                <NavbarBrand href="#"><img src={baseUrl + 'images/pttslogo.png'} /></NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav className="mx-auto" navbar>
+                        <UncontrolledDropdown className="px-2" nav inNavbar>
+                            <DropdownToggle nav caret>
+                                Tutoring
                         </DropdownToggle>
-                        <DropdownMenu right>
-                            <DropdownItem>
-                                Option 1
+                            <DropdownMenu right>
+                                <DropdownItem>
+                                    Math & Science
                             </DropdownItem>
-                            <DropdownItem>
-                                Option 2
+                                <DropdownItem>
+                                    English & History
+                            </DropdownItem>
+                                <DropdownItem>
+                                    Test Prep
                             </DropdownItem>
                             <DropdownItem divider />
                             <DropdownItem>
-                                Reset
+                                    Organizational & Study Skills
                             </DropdownItem>
-                        </DropdownMenu>
-                    </UncontrolledDropdown>
-                    <UncontrolledDropdown className="px-2" nav inNavbar>
-                        <DropdownToggle nav caret>
-                            Test Prep
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
+                        <UncontrolledDropdown className="px-2" nav inNavbar>
+                            <DropdownToggle nav caret>
+                                Test Prep
                         </DropdownToggle>
-                        <DropdownMenu right>
-                            <DropdownItem>
-                                Option 1
+                            <DropdownMenu right>
+                                <DropdownItem>
+                                    SAT
+                            </DropdownItem>
+                                <DropdownItem>
+                                    ACT
                             </DropdownItem>
                             <DropdownItem>
-                                Option 2
+                                  SSAT / ISEE / HSPT
+                            </DropdownItem>
+                                <DropdownItem divider />
+                                <DropdownItem>
+                                    Practice Tests
+                            </DropdownItem>
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
+                        <UncontrolledDropdown className="px-2" nav inNavbar>
+                            <DropdownToggle nav caret>
+                                Locations
+                        </DropdownToggle>
+                            <DropdownMenu right>
+                                <DropdownItem>
+                                    Piedmont
+                            </DropdownItem>
+                                <DropdownItem>
+                                    Lafayette
+                            </DropdownItem>
+                            <DropdownItem>
+                                    Peninsula
+                            </DropdownItem>
+                            <DropdownItem>
+                                    Berkeley
+                            </DropdownItem>
+                            <DropdownItem>
+                                    Davis
+                            </DropdownItem>
+                                <DropdownItem divider />
+                                <DropdownItem>
+                                    Online Tutoring
+                            </DropdownItem>
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
+                        <UncontrolledDropdown className="px-2" nav inNavbar>
+                            <DropdownToggle nav caret>
+                                About
+                        </DropdownToggle>
+                            <DropdownMenu right>
+                                <DropdownItem>
+                                    Paul the Tutor
+                            </DropdownItem>
+                                <DropdownItem>
+                                    Our PTTS Tutors
+                            </DropdownItem>
+                                <DropdownItem>
+                                    Why Us?
                             </DropdownItem>
                             <DropdownItem divider />
                             <DropdownItem>
-                                Reset
+                                    Rates & Hours
                             </DropdownItem>
-                        </DropdownMenu>
-                    </UncontrolledDropdown>
-                    <UncontrolledDropdown className="px-2" nav inNavbar>
-                        <DropdownToggle nav caret>
-                            Locations
-                        </DropdownToggle>
-                        <DropdownMenu right>
-                            <DropdownItem>
-                                Option 1
-                            </DropdownItem>
-                            <DropdownItem>
-                                Option 2
-                            </DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem>
-                                Reset
-                            </DropdownItem>
-                        </DropdownMenu>
-                    </UncontrolledDropdown>
-                    <UncontrolledDropdown className="px-2" nav inNavbar>
-                        <DropdownToggle nav caret>
-                            About
-                        </DropdownToggle>
-                        <DropdownMenu right>
-                            <DropdownItem>
-                                Option 1
-                            </DropdownItem>
-                            <DropdownItem>
-                                Option 2
-                            </DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem>
-                                Reset
-                            </DropdownItem>
-                        </DropdownMenu>
-                    </UncontrolledDropdown>
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
                         </Nav>
-                        <Nav>
-                        <NavItem>
-                            <NavLink className="p-1" href="#"><Button size="sm" color="warning">Get Started</Button></NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="p-1" href="#"><Button size="sm" color="primary">Pay Your Bill</Button></NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="p-1" href="#"><Button size="sm" color="info">Login</Button></NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="p-1" href="#"><Button size="sm" color="success">Register</Button></NavLink>
-                        </NavItem>
-                    </Nav>
-                </Navbar>
-            </div>
-        )
-    }
+                <Nav className="ml-auto">
+                    <NavItem>
+                        <NavLink className="p-1" href="#"><Button color="warning">Get Started</Button></NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className="p-1" href="#"><Button color="danger">Pay Your Bill</Button></NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className="p-1" href="#"><Button color="primary" >Login</Button></NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className="p-1" href="#"><Button color="success">Register</Button></NavLink>
+                    </NavItem>
+                </Nav>
+                </Collapse>
+            </Navbar>
+        </div>
+    )
 }
 
 export default Header;
