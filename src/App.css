@@ -1,0 +1,18 @@
+body, html {
+  background-color: white;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.logoimage {
+  height: 22vmin;
+}
+
+.header {
+  background-color: white;
+  height: 12vmin;
+  padding: 0;
+  margin: 0;
+}
+
