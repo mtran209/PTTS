@@ -13,7 +13,7 @@ function Header() {
             <Navbar className="d-flex" dark expand="md" sticky="top" style={{backgroundColor: '#36542D'}}>
                 <NavbarBrand href="#"><img src={baseUrl + 'images/pttslogo.png'} /></NavbarBrand>
                 <NavbarToggler onClick={toggle} />
-                <Collapse isOpen={isOpen} navbar>
+                <Collapse style={{textAlign: 'center'}} isOpen={isOpen} navbar>
                     <Nav className="mx-auto" navbar>
                         <UncontrolledDropdown className="px-2" nav inNavbar>
                             <DropdownToggle nav caret>
@@ -102,18 +102,12 @@ function Header() {
                             </DropdownMenu>
                         </UncontrolledDropdown>
                         </Nav>
-                <Nav className="ml-auto">
+                <Nav className="ml-auto justify-content-center">
                     <NavItem>
-                        <NavLink className="p-1" href="#"><Button color="warning">Get Started</Button></NavLink>
+                        <NavLink className="p-1" href="#"><Button color="success" >Login</Button></NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className="p-1" href="#"><Button color="danger">Pay Your Bill</Button></NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="p-1" href="#"><Button color="primary" >Login</Button></NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="p-1" href="#"><Button color="success">Register</Button></NavLink>
+                        <NavLink className="p-1" href="#"><Button color="primary">Register</Button></NavLink>
                     </NavItem>
                 </Nav>
                 </Collapse>

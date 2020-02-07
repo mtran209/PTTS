@@ -16,6 +16,7 @@ body, html {
   border-radius: 10px !important;
 }
 
+
 .site-footer {
   flex-shrink: 0;
 }
@@ -26,4 +27,8 @@ body {
 }
 .content {
   flex: 1 0 auto;
+}
+
+a {
+  color: #D1CFB5 !important;
 }
